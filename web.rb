@@ -62,7 +62,7 @@ def authenticate!
   if session.has_key?(:customer_id)
     customer_id = session[:customer_id]
     begin
-      @customer = Stripe::Customer.retrieve("cus_8lKQkifQ3d1eOo")
+      @customer = Stripe::Customer.retrieve(:customer_id)
     rescue Stripe::InvalidRequestError
     end
   else
